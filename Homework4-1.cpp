@@ -1,7 +1,4 @@
-//
-//  main.cpp
-//  Homework4-1
-//
+//  这道题目是程序抄写题，使用的是冒泡排序法
 //  Created by Eli on 2017/7/3.
 //  Copyright © 2017年 Eli. All rights reserved.
 //
