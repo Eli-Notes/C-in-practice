@@ -4,7 +4,7 @@
 //
 //  Created by Eli on 2017/7/10.
 //  Copyright © 2017年 Eli. All rights reserved.
-//
+//实现的功能：字符串插入。输入两个字符串（同一行）比如：aaaaa eee，前者最多10个字符，后者固定3个字符，将后者插入到前者字符串中ASCII最大的字符后面，再输出。
 
 #include <iostream>
 using namespace std;
