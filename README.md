@@ -1,3 +1,3 @@
 # HW & Notes
-This repository includes HW from PKU CS Course at Coursera，and some cpp notes for reference.
-Made by Eli Zhang, Student in XMU, majoring in Financial Engineering, Bachelor Degree.
+The repository includes HW from PKU CS courses at Coursera，and cpp notes for reference.
+Made by Qian Zhang, Student in XMU, Bachelor of Eoconomics in Financial Engineering.
