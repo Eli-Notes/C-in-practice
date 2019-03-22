@@ -2,7 +2,6 @@
 //  Created by Eli on 2017/7/15.
 //  Copyright © 2017年 Eli. All rights reserved.
 //关键点：函数的递归调用，函数设计，flag的设计。
-//这个题目的解题很满意，算是自己的得意之作了。
 #include <iostream>
 using namespace std;
 bool flag=false;//设置全局变量好一点，这样即便在recur里面，也可以做标记。一开始没注意，老是报错。设置flag的原因在下面有说明。
