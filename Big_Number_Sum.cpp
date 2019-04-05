@@ -1,19 +1,22 @@
+// Big number sum
+// Input: 123+321
+// Output: 444
 #include <iostream>
 #include <string>
 using namespace std;
 
 int main() {
 
-	// 定义重要变量
-	string s;    // 存储输入的两个相加的数字
-	int L;       // 存储输入字符长度
-	int L1;      // 存储第一个大数字的长度
-	int L2;      // 存储第二个大数字的长度
-	string s1;   // 存储第一个数
-	string s2;   // 存储第二个数
-	string sout; // 存储输出的结果
-    
-	// 输入s，并分成s1和s2
+	// Pre-define
+	string s;    // input, eg. 123 + 321
+	string s1;   // first number, eg. 123
+	string s2;   // second number , eg. 321
+	string sout; // output
+	int L;       // length of s
+	int L1;      // length of s1
+	int L2;      // length of s2
+
+	// input s and split into s1 and s2
 	cin >> s;
 	L = s.size();
 	for (int i = 0; i < L; i++) if (s[i] == '+') L1 = i;
@@ -21,19 +24,22 @@ int main() {
 	for (int i = 0; i < L1; i++) s1 = s1 + s[i];
 	for (int i = L1 + 1; i < L; i++) s2 = s2 + s[i];
 
-	// 相加s1和s2，结果存储在sout，并输出sout
-	int flag = 0;                             // 用于表示进位数，需要进位时设置为1，否则为0
+	// sum s1 and s2 by summing each digit from right to left
+	int flag = 0; // add one or not: 1 yes, 0 no.
 	for (int i = 0; i < L1 | i < L2; i++) {
+		// get the digit
 		int a = 0, b = 0;
-		if (i < L1) a = s1[L1 - i - 1] - '0'; // a是s1从右往左第i+1个数字，超过s1的长度时，值为0
-		if (i < L2) b = s2[L2 - i - 1] - '0'; // b是s2从右往左第i+1个数字，超过s2的长度时，值为0
-		string c = to_string(a + b + flag);   // c为a和b相加的结果(字符串格式)，flag表示进位数（1或0）
-		flag = 0;                             // 本轮循环用过flag之后，重置为0
-		if (c.size() == 1) sout = c + sout;   // c<10时，直接输出c，不需要进位
-		else sout = c[1] + sout, flag = 1;    // c>=10时，下一轮循环进位，故设置flag为1
+		if (i < L1) a = s1[L1 - 1 - i] - '0';           // a is the i+1 digit from the right of s1
+		if (i < L2) b = s2[L2 - 1 - i] - '0';           // b is the i+1 digit from the right of s2
+		// sum the digit and reset flag
+		string c = to_string(a + b + flag);             // c = a + b + flag
+		if (c.size() == 1) sout = c + sout, flag = 0;   // if c < 10, append c and set flag = 0
+		else sout = c[1] + sout, flag = 1;              // if c >= 10, append c[1] and set flag = 1
+		// for the digit on the left
+		if (!(i + 1 < L1 | i + 1 < L2)) sout = '1' + sout;
 	}
-	cout << sout << endl;
 
+	// return
+	cout << sout << endl;
 	return 0;
 }
-
