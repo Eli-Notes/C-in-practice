@@ -1,6 +1,6 @@
 // Big number sum
-// Input: 123+321
-// Output: 444
+// Input: 123+999
+// Output: 1122
 #include <iostream>
 #include <string>
 using namespace std;
